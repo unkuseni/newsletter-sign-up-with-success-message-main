@@ -19,21 +19,21 @@
   <!-- Sign-up form start -->
   <main class="card" id="card">
     <section id="form-section">
-      <div id="form-text">
-        <h1>Stay updated!</h1>
-        <p>Join 60,000+ product managers receiving monthly updates on:</p>
-        <ul>
-          <li class="bullets"></li>
-          <li class="bullets"></li>
-          <li class="bullets"></li>
-        </ul>
+      <div id="form-text" class="child">
+        <article>
+        <h1 class="header">Stay updated!</h1>
+        <p class="paragraph">Join 60,000+ product managers receiving monthly updates on:</p>
+        <p class="bullet-img"><span><img src="./assets/images/icon-list.svg" alt="tick marker"></span>Product discovery and building what matters</p>
+        <p class="bullet-img"><span><img src="./assets/images/icon-list.svg" alt="tick marker"></span>Measuring to ensure updates are a success</p>
+        <p class="bullet-img"><span><img src="./assets/images/icon-list.svg" alt="tick marker"></span>And much more!</p>
+      </article>
+        <form action="#" method="post" id="form">
+          <label for="email">Email address</label>
+          <input type="email" name="email" id="email" placeholder="email@company.com">
+          <button type="submit">Subscribe to monthly newsletter</button>
+        </form>
       </div>
-      <form action="#" method="post" id="form">
-        <label for="email">Email address</label>
-        <input type="email" name="email" id="email" placeholder="email@company.com">
-        <button type="submit">Subscribe to monthly newsletter</button>
-      </form>
-      <div id="form-img">
+      <div id="form-img" class="child">
         <picture>
           <source media="(min-width: 768px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
           <source media="(min-width: 320px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
@@ -44,7 +44,7 @@
     <!-- Sign-up form end -->
 
     <!-- Success message start -->
-    <section id="success">
+    <section id="success"  style="display: none;">
       <picture>
         <img src="./assets/images/icon-success.svg" alt="">
       </picture>
