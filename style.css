@@ -34,13 +34,14 @@ body {
   color: var(--Dark-slate-grey);
 }
 
-#card {
-  width: clamp(550px, 70vw, 800px);
+.card {
+  width: clamp(500px, 70vw, 800px);
   height: min-content;
   align-self: center;
   background-color: var(--White);
   border-radius: 3vh;
 }
+
 
 #form-section {
   width: 100%;
@@ -48,7 +49,7 @@ body {
   padding: 1em;
   display: flex;
   flex-direction: row;
-  gap: 3vh;
+  gap: 2.9vw;
 
 }
 
@@ -68,7 +69,7 @@ body {
 
 .header {
   display: inline-block;
-  font-size: clamp(2.1em, 2vw, 3em);
+  font-size: clamp(2.3em, 4vw, 3.2em);
   font-weight: 700;
   color: var(--Dark-slate-grey);
   padding-bottom: 0.5em;
@@ -76,47 +77,73 @@ body {
 
 .paragraph {
   font-size: clamp(0.1em, 1.3vw, 16px);
-  padding-bottom: 0.5em;
+  padding-bottom: 0.8em;
 }
 
-.bullet-img {
-
+.paragraph:first-of-type {
+  padding-bottom: 1.5em;
 }
+
 .bullet-img>span {
   padding-right: 0.5em;
 }
+
 .bullet-img>span>img {
   width: 1em;
   height: 1em;
 }
 
-#form {}
+#form {
+  padding-top: 1em;
+  font-family: 'Roboto', sans-serif;
+}
 
 #form>label {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   font-weight: 700;
+  font-size: clamp(8px, 1.2vw, 16px);
+  padding-bottom: 1em;
+}
+
+#error {
+  color: var(--Tomato);
 }
 
 #form>input {
   width: 100%;
   padding: 1em;
-  border-radius: 1vh;
-  border: 1px solid var(--Grey);
+  border-radius: 0.7vh;
+  border: 0.5px solid var(--Grey);
   font-weight: 400;
+  font-size: clamp(0.1em, 1.3vw, 16px);
+  margin-bottom: 1.5em;
+  color: var(--Dark-slate-grey);
 }
 
 #form>input::placeholder {
-  color: var(--Grey);
-  font-size: 16px;
+  color: var(--Charcoal-grey);
+  font-size: clamp(0.1em, 1.3vw, 16px);
+}
+
+#form>.error {
+  border-color: var(--Tomato);
+  color: var(--Tomato);
+  background-color: hsla(4, 100%, 67%, 0.1);
+}
+
+#form>input.error:focus {
+  border: 2px;
+  border-color: var(--Tomato);
 }
 
 #form>button {
   width: 100%;
   padding: 1em;
-  border-radius: 1vh;
+  border-radius: 0.7vh;
   border: none;
   background-color: var(--Dark-slate-grey);
-  font-size: 16px;
+  font-size: clamp(0.1em, 1.3vw, 16px);
   font-weight: 700;
   color: var(--White);
 }
@@ -124,7 +151,7 @@ body {
 #form-img {
   width: 100%;
   height: 100%;
-  
+
 }
 
 #form-img>picture {
@@ -137,36 +164,175 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+body>.success {
+  width: min-content;
+  height: min-content;
+}
+
+#success {
+  display: flex;
+  flex-direction: column;
+  margin: 3em;
+  width: clamp(300px, 50vw, 700px);
+  max-width: 600px;
+
+  height: clamp(300px, 50vw, 700px);
+  max-height: 600px;
+  justify-content: space-between;
+
+}
+
+
+.message>picture {
+  display: block;
+  padding-bottom: 1.5em;
+
+}
+
+#success-header {
+  font-size: clamp(3em, 6vw, 4em);
+}
+
+.success-paragraph {
+  font-size: clamp(16px, 2vw, 2em);
+  padding-right: 1em;
+  line-height: 1.5;
+}
+
+.dismiss-btn {
+  width: 100%;
+  justify-self: end;
+}
+
+.dismiss-btn>button {
+  width: 100%;
+  padding: 1em;
+  border-radius: 0.7vh;
+  border: none;
+  background-color: var(--Dark-slate-grey);
+  font-size: clamp(16px, 2.5vw, 2em);
+  font-weight: 700;
+  color: var(--White);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--Tomato);
+  box-shadow: 0px 15px 20px hsla(4, 100%, 67%, 0.3);
+}
+
 @media screen and (max-width: 768px) {
   #card {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    border-radius: 0;
   }
-  .child {
-    flex-basis: 35%;
+
+  .child:nth-child(2) {
+    flex-basis: 40vh;
   }
+
+  .child:nth-child(1) {
+    flex-basis: 60vh;
+  }
+
   #form-section {
     flex-direction: column-reverse;
     padding: 0;
+
   }
+
   #form-img {
     width: 100%;
-    border-bottom-left-radius: 2vh;
-    border-bottom-right-radius: 2vh;
+    border-bottom-left-radius: 6vw;
+    border-bottom-right-radius: 6vw;
     overflow: hidden;
     height: 30%;
   }
+
   #form-text {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 8vw;
+    margin: 2em 0;
+
+
   }
 
-}
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
+  .header {
+    font-size: clamp(2.5em, 10vw, 3.5em);
+  }
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+  .paragraph {
+    font-size: clamp(1em, 3.5vw, 24px);
+    display: flex;
+    align-content: center;
+  }
+
+  .bullet-img>span {
+    display: block;
+  }
+
+  .bullet-img>span>img {
+    width: 1.3em;
+    height: 1.3em;
+  }
+
+  #form>label {
+    font-size: clamp(8px, 3vw, 16px);
+  }
+
+  #form>input {
+    font-size: clamp(0.8em, 3.5vw, 24px);
+    padding: 1.2em;
+
+  }
+
+  #form>input::placeholder {
+    font-size: clamp(0.8em, 3.5vw, 24px);
+    color: var(--Charcoal-grey);
+  }
+
+  input:hover {
+    cursor: pointer;
+  }
+
+  #form>button {
+    font-size: clamp(0.8em, 3.5vw, 24px);
+    padding: 1.2em;
+  }
+
+  #success {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 1.5em;
+    margin: 0;
+
+  }
+
+  .message {
+    margin-top: 15vh;
+  }
+
+  .message>picture {
+    padding-bottom: 5vh;
+  }
+
+  .success-paragraph {
+    font-size: clamp(1em, 3.5vw, 24px);
+    padding-right: 2em;
+    line-height: 1.5;
+  }
+
+  .dismiss-btn {
+    width: 100%;
+    justify-self: end;
+    padding-bottom: 1em;
+  }
+
+  .dismiss-btn>button {
+    font-size: clamp(0.8em, 3.5vw, 24px);
+  }
 }
