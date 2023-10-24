@@ -7,6 +7,7 @@ const emailInput = document.getElementById("email");
 const dismiss = document.getElementById("dismiss-btn");
 const errorMsg = document.getElementById('error');
 let emailValue = emailInput.value;
+let submittedEmail = document.getElementById("submitted-email");
 successSection.style.display = "none";
 errorMsg.style.display = 'none';
 
@@ -21,6 +22,7 @@ const emailValidation = () => {
 		formSection.style.display = "none";
 		successSection.style.display = "flex";
 		card.classList.add('success');
+submittedEmail.textContent = `${emailValue}`
 	} else {
 		console.log("Email is invalid");
 		emailInput.classList.add('error');
