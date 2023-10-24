@@ -22,7 +22,7 @@ const emailValidation = () => {
 		formSection.style.display = "none";
 		successSection.style.display = "flex";
 		card.classList.add('success');
-submittedEmail.textContent = `${emailValue}`
+submittedEmail.textContent = `${emailValue}`;
 	} else {
 		console.log("Email is invalid");
 		emailInput.classList.add('error');
